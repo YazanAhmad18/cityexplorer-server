@@ -10,7 +10,7 @@ require('dotenv').config();
 const PORT=process.env.port;
 
 // a server endpoint 
-app.get('/', // our endpoint name
+app.get('/weather', // our endpoint name
  function (req, res) { // callback function of what we should do with our request
   res.send('Hello World') // our endpoint function response
 })
