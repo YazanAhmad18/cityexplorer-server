@@ -16,9 +16,20 @@ app.get('/', // our endpoint name
   res.send('Hello World') // our endpoint function response
 })
  
-app.get('/weather', (req, res) => {
-    res.json(data)
-});
+app.get('/weather', // our endpoint name
+  function (req, res) { // callback function of what we should do with our request
+
+    const resDataWeather = data.data.map( objDataWeather => new Weather(objDataWeather));
+    res.json(resDataWeather);// our endpoint function response
+  }
+);
+class Weather {
+    constructor(dataForWeather) {
+      this.descriptionWeather = dataForWeather.weather.description;
+      this.dateWeather = dataForWeather.valid_date;
+    }
+  }
+  
 
 app.listen(PORT, () => {
     console.log(`Server started on ${PORT}`);
