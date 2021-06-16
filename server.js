@@ -43,5 +43,5 @@ class Weather {
 
 app.listen(PORT, () => {
   console.log(`Server started : ${PORT}`);
-});k
+});
 
