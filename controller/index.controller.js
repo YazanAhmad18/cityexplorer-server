@@ -1,5 +1,5 @@
 const indexController = (req, res) => {
-    res.send('Your API Server is running');
+    res.send('Your Server is running');
 }
 
 module.exports = indexController;
